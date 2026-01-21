@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoolanTo-Do</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <div class="logo-container">
+                <!-- Using a simple SVG representation for the logo based on the image style -->
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="32" rx="6" fill="white"/>
+                    <path d="M10 10H14V22H10V10Z" fill="#F08434"/>
+                    <path d="M18 16H22V22H18V16Z" fill="#F08434"/>
+                    <circle cx="20" cy="12" r="2" fill="#F08434"/>
+                </svg>
+                <h1>MoolanTo-Do</h1>
+            </div>
+        </header>
+
+        <main class="todo-wrapper">
+            <div class="input-group">
+                <input type="text" id="task-input" placeholder="Add a new task...">
+                <button id="add-btn">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-right: 6px;">
+                        <path d="M6 1V11M1 6H11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    Add Task
+                </button>
+            </div>
+
+            <div class="filters-container">
+                <div class="filter-tabs">
+                    <button class="filter-btn active" data-filter="all">
+                        <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-all">
+                            <path d="M1 5L4.5 9L13 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        All <span id="count-all" class="count-badge">(0)</span>
+                    </button>
+                    <button class="filter-btn" data-filter="active">
+                        <div class="circle-icon"></div>
+                        Active <span id="count-active" class="count-badge">(0)</span>
+                    </button>
+                    <button class="filter-btn" data-filter="completed">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-completed">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        Completed <span id="count-completed" class="count-badge">(0)</span>
+                    </button>
+                </div>
+            </div>
+
+            <ul id="task-list" class="task-list">
+                <!-- Tasks will be injected here -->
+            </ul>
+
+            <footer class="list-footer">
+                <span id="items-left">0 tasks remaining</span>
+                <button id="clear-completed">Clear completed</button>
+            </footer>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
