@@ -1,5 +1,9 @@
 {
-  "projects": {},
+  "projects": {
+    "default": "moolan-to-do-prod",
+    "prod": "moolan-to-do-prod",
+    "dev": "moolan-to-do-dev"
+  },
   "targets": {},
   "etags": {}
 }
