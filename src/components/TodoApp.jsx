@@ -112,14 +112,14 @@ export default function TodoApp({ user }) {
                             <svg width="14" height="10" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M1 5L4.5 9L13 1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                             </svg>
-                            All <span className="count-badge">({tasks.length})</span>
+                            <span className="filter-label">All</span> <span className="count-badge">({tasks.length})</span>
                         </button>
                         <button
                             className={`filter-btn ${filter === 'active' ? 'active' : ''}`}
                             onClick={() => setFilter('active')}
                         >
                             <div className="circle-icon"></div>
-                            Active <span className="count-badge">({activeCount})</span>
+                            <span className="filter-label">Active</span> <span className="count-badge">({activeCount})</span>
                         </button>
                         <button
                             className={`filter-btn ${filter === 'completed' ? 'active' : ''}`}
@@ -129,7 +129,7 @@ export default function TodoApp({ user }) {
                                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
                             </svg>
-                            Completed <span className="count-badge">({tasks.filter(t => t.completed).length})</span>
+                            <span className="filter-label">Completed</span> <span className="count-badge">({tasks.filter(t => t.completed).length})</span>
                         </button>
                     </div>
                 </div>
